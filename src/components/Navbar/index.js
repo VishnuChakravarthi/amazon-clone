@@ -5,9 +5,16 @@ import "./navbar.css";
 import logo from ".../../../public/img/amazonlogo.jpg";
 import { Link } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
+import { auth } from "../../firebase";
 
 const Navbar = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="header">
@@ -19,10 +26,19 @@ const Navbar = () => {
         <Search className="header_searchicon" />
       </div>
       <div className="header_nav">
-        <div className="header_option">
-          <span className="header_optionlineone">Hello Vishnu</span>
-          <span className="header_optionlinetwo">Sign In</span>
-        </div>
+        <Link to={!user && "/login"}>
+          <div className="header_option" onClick={handleAuthentication}>
+            <span className="header_optionlineone">
+              Hello{" "}
+              {user
+                ? user?.email.slice(0, user?.email.indexOf("@")).toUpperCase()
+                : "Guest"}
+            </span>
+            <span className="header_optionlinetwo">
+              {user ? "Sign out" : "Sign In"}
+            </span>
+          </div>
+        </Link>
         <div className="header_option">
           <span className="header_optionlineone">Returns</span>
           <span className="header_optionlinetwo">& Orders</span>

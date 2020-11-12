@@ -1,6 +1,6 @@
 .checkout {
   display: flex;
-  flex-direction: column;
+  background: white;
 }
 
 .checkout_ad {

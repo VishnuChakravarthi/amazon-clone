@@ -17,14 +17,14 @@ const Home = () => {
         <img className="home_image" src={homemainimg} alt="" />
         <div className="home_row">
           <Product
-            id=""
+            id="1"
             title="The Lean Startup: How Today's Entrepreneurs Use Continuous Innovation to Create Radically Successful Businesses"
-            price="29.99"
+            price={29.99}
             image={item1}
             rating={5}
           />
           <Product
-            id=""
+            id="2"
             title="Wired Controller for Xbox One, Vinsic Xbox One Wired Controller - Gampad Gaming Controller for Xbox One and PC - Corded Xbox One Controller with 7.2FT Cable & Headset Jack"
             price={129.0}
             image={item2}
@@ -34,21 +34,21 @@ const Home = () => {
 
         <div className="home_row">
           <Product
-            id=""
+            id="3"
             title="Tree Hut Shea Sugar Scrub Tropical Mango, 18oz, Ultra Hydrating and Exfoliating Scrub for Nourishing Essential Body Care"
             price={5.99}
             image={item3}
             rating={3}
           />
           <Product
-            id=""
+            id="4"
             title="Spyder Men’s Mandate Zip T-Neck – Pullover Long Sleeve Active Shirt"
             price={88.7}
             image={item4}
             rating={5}
           />
           <Product
-            id=""
+            id="5"
             title="Philips Norelco OneBlade Face + Body, Hybrid Electric Trimmer and Shaver, QP2630/70"
             price={39.95}
             image={item5}
@@ -58,9 +58,9 @@ const Home = () => {
 
         <div className="home_row">
           <Product
-            id=""
+            id="6"
             title='Samsung Chromebook Plus V2, 2-in-1, 4GB RAM, 32GB eMMC, 13MP Camera, Chrome OS, 12.2", 16:10 Aspect Ratio, Light Titan (XE520QAB-K01US)'
-            price="499.99"
+            price={499.99}
             image={item6}
             rating={5}
           />
