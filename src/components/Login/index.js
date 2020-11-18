@@ -1,6 +1,5 @@
 import { Link, useHistory } from "react-router-dom";
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { auth } from "../../firebase";
 import "./Login.css";
 

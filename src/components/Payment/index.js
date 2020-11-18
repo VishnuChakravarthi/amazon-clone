@@ -24,11 +24,11 @@ function Payment() {
 
   useEffect(() => {
     const getClientSecret = async () => {
+      const total = Number(getBasketTotal(basket) * 100);
       const response = await axios({
         method: "post",
-        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+        url: `/payments/create?total=${total}`,
       });
-      console.log(response.data);
       setClientSecret(response.data.clientSecret);
     };
     getClientSecret();
@@ -63,9 +63,9 @@ function Payment() {
         setError(null);
         setProcessing(false);
 
-        dispatch({
-          type: "EMPTY_BASKET",
-        });
+        // dispatch({
+        //   type: "EMPTY_BASKET",
+        // });
 
         history.replace("/orders");
       })
@@ -102,6 +102,7 @@ function Payment() {
           <div className="payment__items">
             {basket?.map((item) => (
               <CheckoutProduct
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 image={item.image}
